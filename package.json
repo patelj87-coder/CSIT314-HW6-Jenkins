@@ -1,0 +1,10 @@
+
+{
+  "name": "csit314-hw6-jenkins",
+  "version": "1.0.0",
+  "description": "Node.js project for CSIT 314 Homework 6",
+  "main": "app.js",
+  "scripts": {
+    "build": "node app.js"
+  }
+}

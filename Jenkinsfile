@@ -5,19 +5,21 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Building the project...'
+                sh 'node --version'
+                sh 'npm run build'
             }
         }
 
         stage('Test') {
             steps {
-                echo 'Testing the project...'
+                sh 'test -f dist/build.txt'
+                echo 'Test passed!'
             }
         }
 
-        stage('Deploy') {
+        stage('Archive Artifact') {
             steps {
-                echo 'Deploying the project...'
+                archiveArtifacts artifacts: 'dist/build.txt', fingerprint: true
             }
         }
     }
